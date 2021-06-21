@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-import MenuItem from "./menu-item.component";
+import MenuItem from "../menu-item/menu-item.component";
+import "./directory.styles.scss"
 
 
 const Directory = props => {
 
-    const [sections, setSections] = useState([
+    const [ sections, setSections ] = useState([
         {
             title: 'hats',
             imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
@@ -42,8 +43,8 @@ const Directory = props => {
     return (
         <div className="directory-menu">
             {
-                sections.map(({ title, imageUrl, id }) => (
-                    <MenuItem key={id} title={title} />
+                sections.map(({ title, imageUrl, id, size }) => (
+                    <MenuItem key={id} title={title} imageUrl={imageUrl} size={size}/>
                 ))
             }
         </div>
